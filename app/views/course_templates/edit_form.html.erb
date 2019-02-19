@@ -24,7 +24,7 @@
   </div>
   
   <%= select_tag("department_id", options_from_collection_for_select(Department.all, :id, :name, @course.try(:department_id)), :class => "form-control") %>
-
+or <a href="/departments/new">Add a department</a> first
   <button class="btn btn-block btn-outline-secondary">
     Update course
   </button>

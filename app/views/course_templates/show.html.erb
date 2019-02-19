@@ -22,7 +22,9 @@
     Department
   </dt>
   <dd>
-    <%= @course.department_id %>
+     <% x = course.department_id %>
+      
+      <a href="/departments/<%= x %>"><%= Department.find_by({ :id => x }).name %></a>
   </dd>
 </dl>
 

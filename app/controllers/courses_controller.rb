@@ -1,13 +1,13 @@
 class CoursesController < ApplicationController
   def index
     @courses = Course.all
-  
+   
     render("course_templates/index.html.erb")
   end
 
   def show
     @course = Course.find(params.fetch("id_to_display"))
-
+@course.department_id = params.fetch("department_id")
     render("course_templates/show.html.erb")
   end
 
@@ -19,6 +19,7 @@ class CoursesController < ApplicationController
     @course = Course.new
 
     @course.title = params.fetch("title")
+    @course.department_id = params.fetch("department_id")
 
     if @course.valid?
       @course.save
@@ -39,7 +40,7 @@ class CoursesController < ApplicationController
     @course = Course.find(params.fetch("id_to_modify"))
 
     @course.title = params.fetch("title")
-
+    @course.department_id = params.fetch("department_id")
     if @course.valid?
       @course.save
 
