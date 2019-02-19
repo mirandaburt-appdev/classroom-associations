@@ -25,6 +25,7 @@
     <input type="text" id="title" name="title" class="form-control" value="<%= @course.try(:title) %>">
   </div>
 
+<%= select_tag("department_id", options_from_collection_for_select(Department.all, :id, :name, @course.try(:department_id)), :class => "form-control") %>
   <button class="btn btn-block btn-outline-secondary">
     Create course
   </button>

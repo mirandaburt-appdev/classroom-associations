@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   def index
     @courses = Course.all
-
+  
     render("course_templates/index.html.erb")
   end
 
